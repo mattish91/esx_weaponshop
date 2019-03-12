@@ -1,6 +1,8 @@
 USE `essentialmode`;
 
-CREATE TABLE `weashops` (
+
+
+CREATE TABLE IF NOT EXISTS `weashops` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`zone` varchar(255) NOT NULL,
 	`item` varchar(255) NOT NULL,
@@ -9,8 +11,15 @@ CREATE TABLE `weashops` (
 	PRIMARY KEY (`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `licenses` (
+	`type` varchar(255) NOT NULL,
+	`label`` varchar(255) NOT NULL,
+
+	PRIMARY KEY (`type`)
+);
+
 INSERT INTO `licenses` (`type`, `label`) VALUES
-	('weapon', "Permis de port d'arme")
+	('weapon', "Licens att bära ett vapen")
 ;
 
 INSERT INTO `weashops` (`zone`, `item`, `price`) VALUES
